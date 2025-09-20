@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Verril Indrianto | Portfolio</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Arial', sans-serif; background: #111; color: #fff; line-height: 1.6; }
+    #particles-js { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+
+
+    nav {
+      background: #000000;
+      padding: 15px 0;
+      text-align: right;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start; 
+  gap: 40px;
+  margin-left: 30px; 
+}
+
+    nav ul li {
+      display: inline;
+    }
+
+    nav ul li a {
+      color: #817575;
+      text-decoration: none;
+      font-size: 1rem;
+      position: relative;
+      padding-bottom: 5px;
+      transition: color 0.3s ease;
+    }
+
+
+    nav ul li a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 2px;
+      background: #d4f1ff;
+      opacity: 0;
+      transform: translateY(5px);
+      transition: width 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+    }
+
+    nav ul li a:hover::after {
+      width: 100%;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    nav ul li a:hover {
+      color: #fff;
+    }
+
+    nav ul li a.active {
+      color: #ffffff;
+    }
+    
+
+    nav ul li a.active::after {
+      width: 100%;
+      opacity: 1;
+      transform: translateY(0);
+    }
+        
+   
+    .buttons { margin-top: 10px; text-align: right; }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #0077ff;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-right: 10px;
+      transition: background 0.3s;
+    }
+    .btn:hover { background: #0055aa; }
+
+    header { text-align: center; padding: 80px 20px; background: rgba(0,0,0,0.6); }
+    header h1 { font-size: 3rem; margin-bottom: 20px; }
+    header p { font-size: 1.2rem; color: #eee; }
+
+    section { padding: 60px 20px; }
+    section h2 { text-align: center; margin-bottom: 40px; font-size: 2.5rem; }
+    .container { max-width: 1000px; margin: auto; }
+
+    #skills-list, .projects-container, .experience-container {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;
+    }
+
+    .skill-item h3 { margin-bottom: 8px; }
+    .skill-bar { background: #333; border-radius: 5px; overflow: hidden; }
+    .skill-fill { background: #4CAF50; height: 20px; width: 0; transition: width 1s ease-in-out; }
+
+    .project, .exp {
+      background: rgba(255,255,255,0.05);
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .project img {
+      width: 100%;
+      max-height: 200px;
+      object-fit: contain;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    footer { background: #222; text-align: center; padding: 20px; }
+    footer a { color: #4CAF50; margin: 0 10px; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div id="particles-js"></div>
+
+  <nav>
+    <ul>
+      <li><a href="#about" class="active">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <img src="image/p-fotor-20250920222922.png" alt="Aplikasi Reservasi Barber">
+    <h1>Verril Indrianto</h1>
+    <p><span id="typed-text"></span></p>
+  </header>
+
+
+  <section id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>Perkenalkan, saya Verril Indrianto. Mahasiswa dengan minat besar pada dunia teknologi, khususnya dalam pengembangan sistem berbasis komputer, analisis data, dan kecerdasan buatan. Saya berfokus pada penerapan ilmu komputer untuk memberikan solusi inovatif pada berbagai permasalahan nyata.</p>
+       <div class="buttons">
+          <a href="https://github.com/verril-svg/titanic-ml" target="_blank" class="buttons">Download CV</a>
+        </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="container">
+      <h2>Skills</h2>
+      <div id="skills-list"></div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="projects-container">
+      
+        <div class="project">
+          <img src="image/SS.jpg" alt="Aplikasi Reservasi Barber">
+          <h3>Aplikasi reservasi layanan dan manajemen layanan pangkas rambut</h3>
+          <p>Aplikasi reservasi layanan dan manajemen layanan pangkas rambut sederhana yang dibuat dengan JavaFX dan MySQL.</p>
+          <div class="buttons">
+        <a href="MYproject/AplikasiReservasiBarber.zip" download class="btn">Download Code</a>
+        </div>
+        </div>
+
+        <div class="project">
+           <img src="image/depositphotos_516614530-stock-photo-phytoplasma-virus-virus-diseases-vines.jpg" alt="Deteksi Penyakit Tanaman">
+          <h3>Deteksi Penyakit Tanaman</h3>
+          <p>Membangun model AI berbasis computer vision untuk mendeteksi penyakit pada tanaman, membantu petani dalam pengambilan keputusan lebih cepat dan tepat.</p>
+         <div class="buttons">
+        <a href="MYproject/my-teachable-machine-project (3).zip" download class="btn">Download Code</a>
+        </div>
+        </div>
+
+        <div class="project">
+          <img src="image/Screenshot 2025-09-20 083315.png" alt="BarberCutsAI">
+          <h3>BarberCutsAI</h3>
+          <p>Aplikasi berbasis web yang mendeteksi bentuk wajah pengguna menggunakan Teachable Machine dan memberikan rekomendasi potongan rambut yang sesuai.</p>
+         <div class="buttons">
+        <a href="MYproject/BarberCutsAi (4).zip" download class="btn">Download Code</a>
+        </div>
+        </div>
+
+                <div class="project">
+          <img src="image/1_-hkzF9m5828c-UIaSQNUug.jpg" alt="Aplikasi Reservasi Barber">
+          <h3>Aplikasi reservasi layanan dan manajemen layanan pangkas rambut</h3>
+          <p>Aplikasi reservasi layanan dan manajemen layanan pangkas rambut sederhana yang dibuat dengan JavaFX dan MySQL.</p>
+          <div class="buttons">
+        <a href="MYproject/Database System McDEnald Management.zip" download class="btn">Download Code</a>
+        </div>
+        </div>
+        
+
+        <div class="project">
+          <img src="image/Screenshot 2025-09-20 092848.png" alt="Ui/Ux BoxBox+">
+          <h3>Ui/Ux dari aplikasi BoxBox+</h3>
+          <p>Sebuah Tampilan Ui/Ux dari aplikasi BoxBox+ yaitu Aplikasi untuk menyewa Loker.</p>
+         <div class="buttons">
+        <a href="MYproject/BoxBox+.fig" download class="btn">Download </a>
+        </div>
+        </div>
+
+        <div class="project">
+          <img src="image/Screenshot 2025-09-20 093214.png" alt="Ui/Ux SmartHome">
+          <h3>Ui/Ux dari aplikasi SmartHome</h3>
+          <p>Sebuah Tampilan Ui/Ux dari aplikasi SmartHome yaitu Aplikasi untuk Mengkontrol Alat di dalam rumah melalui Handphone.</p>
+          <div class="buttons">
+        <a href="MYproject/SmartHome.fig" download class="btn">Download </a>
+        </div>
+        </div>
+
+         <div class="project">
+         <img src="image/Screenshot 2025-09-20 234751.png" alt="Ui/Ux Lapakku">
+        <h3>Ui/Ux dari aplikasi Lapakku</h3>
+        <p>Sebuah Tampilan Ui/Ux dari aplikasi Lapakku yaitu Aplikasi untuk Menganalisa Keuntuntungan serta pemasukan dan stock barang dari UMKM.</p>
+        <div class="buttons">
+        <a href="MYproject/Lapakku.fig" download class="btn">Download Code</a>
+        </div>
+        </div>
+
+
+
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="container">
+      <h2>Experience & Education</h2>
+      <div class="experience-container">
+        <div class="exp">
+          <h3>Universitas Bina Nusantara</h3>
+          <p>Mahasiswa Sistem Informasi | 2023 - Sekarang</p>
+        </div>
+        <div class="exp">
+          <h3>Smak 7 Penabur </h3>
+          <p>Lulusan Smak 7 Penabur | 2020-2023.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Verril Indrianto</p>
+    <p>
+    <a href="https://mail.google.com/mail/?view=cm&to=verrilindrianto@gmail.com" target="_blank">
+  <i class="fa fa-envelope"></i> Email </a>
+      <a href="https://wa.me/6285719700253"><i class="fa fa-whatsapp"></i> WhatsApp</a>
+      <a href="https://www.linkedin.com/in/verril-indrianto-99aa2b362" target="_blank"><i class="fa fa-linkedin"></i> LinkedIn</a>
+      <a href="https://github.com/verril-svg"><i class="fa fa-github"></i> GitHub</a>
+    </p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.2/vanilla-tilt.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+  <script>
+    new Typed('#typed-text', {
+      strings: ["Mahasiswa Sistem Informasi", "AI & Web Developer", "Problem Solver"],
+      typeSpeed: 60,
+      backSpeed: 40,
+      loop: true
+    });
+
+    const skills = [
+      { name: "HTML", level: "90%" },
+      { name: "CSS", level: "85%" },
+      { name: "JavaScript", level: "80%" },
+      { name: "Python", level: "85%" },
+      { name: "UI/UX(Figma)", level: "80%" },
+      { name: "Machine Learning", level: "75%" },
+      { name: "Ms.word", level: "90%" },
+      { name: "Ms.Exel", level: "90%" },
+      { name: "Ms.Power Point", level: "90%" },
+      { name: "Canva", level: "90%" }
+    ];
+
+    const skillsList = document.getElementById('skills-list');
+    skills.forEach(skill => {
+      const skillItem = document.createElement('div');
+      skillItem.classList.add('skill-item');
+      skillItem.innerHTML = `
+        <h3>${skill.name}</h3>
+        <div class="skill-bar">
+          <div class="skill-fill" style="width: ${skill.level};"></div>
+        </div>
+      `;
+      skillsList.appendChild(skillItem);
+    });
+
+    ScrollReveal().reveal('header', { delay: 200, distance: '50px', origin: 'top', duration: 1000 });
+    ScrollReveal().reveal('#about .container', { delay: 250, distance: '50px', origin: 'left', duration: 1000 });
+    ScrollReveal().reveal('#skills .container', { delay: 300, distance: '50px', origin: 'right', duration: 1000 });
+    ScrollReveal().reveal('#projects .container', { delay: 400, distance: '50px', origin: 'bottom', duration: 1000 });
+    ScrollReveal().reveal('#experience .container', { delay: 500, distance: '50px', origin: 'top', duration: 1000 });
+
+    VanillaTilt.init(document.querySelectorAll(".project"), { max: 25, speed: 400 });
+
+    particlesJS("particles-js", {
+      "particles": { "number": {"value": 80}, "size": {"value": 3}, "move": {"speed": 2}, "line_linked": {"enable": true}, "color": {"value": "#ffffff"} },
+      "interactivity": { "events": {"onhover": {"enable": true, "mode": "repulse"}} }
+    });
+        const navLinks = document.querySelectorAll("nav ul li a");
+
+    navLinks.forEach(link => {
+      link.addEventListener("click", function() {
+        // hapus semua active
+        navLinks.forEach(l => l.classList.remove("active"));
+        // tambahkan active ke link yang diklik
+        this.classList.add("active");
+      });
+    });
+  
+  </script>
+</body>
+</html>
